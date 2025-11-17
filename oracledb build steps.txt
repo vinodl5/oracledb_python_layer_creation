@@ -1,0 +1,6 @@
+# Build the Docker image
+docker build -t oracledb-layer:3.11 .
+
+# Create a container and extract the ZIP file
+
+docker run --rm -v "${PWD}:/out" --entrypoint /bin/cp oracledb-layer:3.11 /opt/oracledb-layer.zip /out/
